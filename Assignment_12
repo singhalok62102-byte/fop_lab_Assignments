@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(){
+    int a,b,i,scd=-1;
+
+    scanf("%d %d",&a,&b);
+
+    for(i=2;i<=a && i<=b;i++){
+        if(a%i==0 && b%i==0){
+            scd=i;
+            break;
+        }
+    }
+
+    if(scd!=-1)
+        printf("SCD=%d\n",scd);
+    else
+        printf("No SCD\n");
+
+    while(b!=0){
+        int t=b;
+        b=a%b;
+        a=t;
+    }
+
+    printf("GCD=%d",a);
+
+    return 0;
+}
