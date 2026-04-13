@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+struct Student{
+    int roll,m1,m2,m3,total;
+    float per;
+    char name[20];
+};
+
+int main(){
+    struct Student s;
+
+    scanf("%d %s",&s.roll,s.name);
+    scanf("%d %d %d",&s.m1,&s.m2,&s.m3);
+
+    s.total=s.m1+s.m2+s.m3;
+    s.per=s.total/3.0;
+
+    printf("%d %s %d %.2f",s.roll,s.name,s.total,s.per);
+
+    return 0;
+}
