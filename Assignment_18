@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[100], str2[100], rev[100];
+    int i, j, len;
+
+    printf("Enter a string: ");
+    scanf("%s", str1);
+
+    printf("Enter another string for equality check: ");
+    scanf("%s", str2);
+
+    // i) Length of string
+    len = strlen(str1);
+    printf("\nLength of string = %d\n", len);
+
+    // ii) String reversal
+    for (i = len - 1, j = 0; i >= 0; i--, j++) {
+        rev[j] = str1[i];
+    }
+    rev[j] = '\0';
+    printf("Reversed string = %s\n", rev);
+
+    // iii) Equality check
+    if (strcmp(str1, str2) == 0)
+        printf("Strings are equal\n");
+    else
+        printf("Strings are not equal\n");
+
+    // iv) Palindrome check
+    if (strcmp(str1, rev) == 0)
+        printf("The string is a Palindrome\n");
+    else
+        printf("The string is not a Palindrome\n");
+
+    // v) Substring check
+    if (strstr(str1, str2) != NULL)
+        printf("Substring found in main string\n");
+    else
+        printf("Substring not found in main string\n");
+
+    return 0;
+}
